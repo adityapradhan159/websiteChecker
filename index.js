@@ -27,7 +27,7 @@ const checkWebsiteAndSendEmail = async () => {
     
     console.log(response.status)
     // Check if the status code is not 200
-    if (response.status == 200) {
+    if (response.status !== 200) {
         console.log(response.status)
       // Send an email notification
       const mailOptions = {
@@ -53,7 +53,7 @@ const checkWebsiteAndSendEmail = async () => {
 };
 
 // Set up an interval to periodically check the website (e.g., every 5 minutes)
-const interval = 1 * 60 * 1000; // 5 minutes in milliseconds
+const interval = 21600000; // 6 hours in milliseconds
 setInterval(checkWebsiteAndSendEmail, interval);
 
 // Initial check when the script starts
