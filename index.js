@@ -55,7 +55,8 @@ const checkWebsiteAndSendEmail = async () => {
 };
 
 // Set up an interval to periodically check the website (e.g., every 5 minutes)
-const interval = 1 * 60 * 1000; // 6 hours in milliseconds
+// const interval = 10 * 60 * 1000; // 6 hours in milliseconds
+const interval = 21600000
 setInterval(checkWebsiteAndSendEmail, interval);
 
 // Initial check when the script starts
