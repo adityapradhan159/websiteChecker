@@ -29,7 +29,7 @@ const checkWebsiteAndSendEmail = async () => {
     
     console.log(response.status)
     // Check if the status code is not 200
-    if (response.status == 200) {
+    if (response.status !== 200) {
         console.log(response.status)
       // Send an email notification
       const mailOptions = {
