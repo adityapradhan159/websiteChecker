@@ -1,5 +1,6 @@
+const { default: axios } = require('axios');
 const express = require('express');
-const fetch = require('node-fetch');
+// const fetch = require('node-fetch');
 const nodemailer = require('nodemailer');
 
 const app = express();
@@ -11,7 +12,7 @@ const websiteUrl = 'https://artisticyogaikriya.com/ikriya-video-service/isd/list
 function checkWebsiteStatus() {
   setInterval(async () => {
     try {
-      const response = await fetch(websiteUrl);
+      const response = await axios.get(websiteUrl);
       if (response.status == 200) {
         sendEmail('Website Down', `The website ${websiteUrl} is not responding with status 200.`);
       }
