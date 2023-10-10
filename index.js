@@ -13,7 +13,7 @@ function checkWebsiteStatus() {
   setInterval(async () => {
     try {
       const response = await axios.get(websiteUrl);
-      if (response.status == 200) {
+      if (response.status !== 200) {
         sendEmail('Website Down Notification', `Please check your site! It's not running properly.The website ${websiteUrl} returned status code ${response.status}.`);
       }
       else{
@@ -23,7 +23,7 @@ function checkWebsiteStatus() {
       console.error(error);
       sendEmail('Error Checking Website', 'There was an error checking the website status.');
     }
-  }, 60000); // Check every 1 minute (60,000 milliseconds)
+  }, 21600000); // Check every 1 minute (60,000 milliseconds)
 }
 
 // Function to send email using Nodemailer
