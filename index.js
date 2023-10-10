@@ -14,7 +14,7 @@ function checkWebsiteStatus() {
     try {
       const response = await axios.get(websiteUrl);
       if (response.status == 200) {
-        sendEmail('Website Down', `The website ${websiteUrl} is not responding with status 200.`);
+        sendEmail('Website Down Notification', `Please check your site! It's not running properly.The website ${websiteUrl} returned status code ${response.status}.`);
       }
       else{
         console.log(`Website is up (status code ${response.status}).`);
@@ -42,7 +42,8 @@ function sendEmail(subject, text) {
       from: 'pradhantestay@gmail.com',
       to: recipients.join(','), // Change this to the recipient's email address
       subject: 'Website Down Notification',
-      text: `Please check your site! It's not running properly.The website ${websiteUrl} returned status code ${response.status}.`,
+      text: text,
+      // text: `Please check your site! It's not running properly.The website ${websiteUrl} returned status code ${response.status}.`,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
