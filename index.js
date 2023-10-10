@@ -4,7 +4,7 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = "https://websitechecker.onrender.com" || 3000;
 
 const websiteUrl = 'https://artisticyogaikriya.com/ikriya-video-service/isd/list'; 
 
@@ -32,7 +32,7 @@ function sendEmail(subject, text) {
     service: 'gmail', // e.g., 'Gmail', 'Outlook', etc.
     auth: {
       user: 'pradhantestay@gmail.com',
-      pass: process.env.PASSWORD,
+      pass: 'tathkjmyrfgwwxdf',
     },
   });
 
