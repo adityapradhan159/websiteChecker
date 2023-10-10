@@ -4,7 +4,7 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 
 const app = express();
-const port = "https://websitechecker.onrender.com" || 3000;
+const port = 3000;
 
 const websiteUrl = 'https://artisticyogaikriya.com/ikriya-video-service/isd/list'; 
 
