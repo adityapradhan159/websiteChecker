@@ -23,7 +23,7 @@ function checkWebsiteStatus() {
       console.error(error);
       sendEmail('Error Checking Website', 'There was an error checking the website status.');
     }
-  }, 21600000); // Check every 1 minute (60,000 milliseconds)
+  }, 200000); 
 }
 
 // Function to send email using Nodemailer
@@ -36,7 +36,7 @@ function sendEmail(subject, text) {
     },
   });
 
-  recipients=['pradhanaditya159@gmail.com','samanvay.agarwal07@gmail.com']
+  recipients=['pradhanaditya159@gmail.com','samanvay.agarwal07@gmail.com', 'arjun@tudotechnologies.com','piyush.nag89@gmail.com']
 
   const mailOptions = {
       from: 'pradhantestay@gmail.com',
